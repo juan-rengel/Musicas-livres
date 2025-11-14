@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASTER — Painel Administrativo</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0a0f1f;
+      color: #fff;
+    }
+
+    header {
+  margin-left: 230px;
+  background-color: #141c2f;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+  
+    .container {
+      padding: 20px;
+      display: grid;
+      gap: 20px;
+    }
+    .card {
+      background: #1d2a44;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #007bff;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+  .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #141c2f;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar .logo {
+      color: #fff;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .sidebar nav a {
+      display: block;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+    }
+    .sidebar nav a:hover, .sidebar nav a.active {
+      background: #007bff;
+    }
+    .content {
+      margin-left: 240px;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2 class="logo">MASTER</h2>
+    <nav>
+      <a href="#" class="active">Dashboard</a>
+      <a href="master-lojas.html">Lojas</a>
+      <a href="master-produtos.html">Produtos</a>
+      <a href="master-rebaixados.html">Rebaixados</a>
+      <a href="master-graficos.html">Gráficos</a>
+      <a href="master-relatorios.html">Relatórios</a>
+    </nav>
+  </aside>
+  <div class="content">
+  <header>PAINEL MASTER — ADMIN</header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Usuários</h2>
+      <p>Gerencie todos os usuários cadastrados no sistema.</p>
+      <a class="btn" href="cadastro-usuarios.html">Gerenciar</a>
+    </div>
+
+    <div class="card">
+      <h2>Produtos</h2>
+      <p>Controle total da lista de produtos e rebaixados.</p>
+      <a class="btn" href="Lista-produtos.html">Lista completa</a>
+    </div>
+
+    <div class="card">
+      <h2>Relatórios</h2>
+      <p>Acesse relatórios completos, registros e filtros avançados.</p>
+      <a class="btn" href="relatorios.html">Abrir relatórios</a>
+    </div>
+
+    <div class="card">
+      <h2>Dashboard</h2>
+      <p>Gráficos e indicadores gerais.</p>
+      <a class="btn" href="dashboard.html">Abrir dashboard</a>
+    </div>
+
+    <div class="card">
+      <h2>Calendário</h2>
+      <p>Controle de datas, alertas e vencimentos.</p>
+      <a class="btn" href="calendario.html">Abrir calendário</a>
+    </div>
+      <div class="card">
+      <h2>Acompanhamento Geral</h2>
+      <p>Resumo completo de todas as lojas, produtos cadastrados, rebaixados e movimentações.</p>
+      <a class="btn" href="relatorios.html">Visão geral</a>
+    </div>
+
+  </div>
+</body>
+</html>

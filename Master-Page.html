@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASTER — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0f1f;
+      color: #fff;
+    }
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #141c2f;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar .logo {
+      text-align: center;
+      font-size: 1.4rem;
+    }
+    .sidebar nav a {
+      display: block;
+      padding: 10px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+    }
+    .sidebar nav a:hover, .sidebar nav a.active {
+      background: #007bff;
+    }
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1d2a44;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    canvas {
+      width: 100%;
+      max-height: 300px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <h2 class="logo">MASTER</h2>
+    <nav>
+      <a href="master-dashboard.html" class="active">Dashboard</a>
+      <a href="master-lojas.html">Lojas</a>
+      <a href="master-produtos.html">Produtos</a>
+      <a href="master-rebaixados.html">Rebaixados</a>
+      <a href="master-graficos.html">Gráficos</a>
+      <a href="master-relatorios.html">Relatórios</a>
+    </nav>
+  </aside>
+
+  <div class="content">
+    <h1>Dashboard Geral</h1>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Total de Lojas</h2>
+        <p id="totalLojas">0</p>
+      </div>
+
+      <div class="card">
+        <h2>Produtos Cadastrados</h2>
+        <p id="totalProdutos">0</p>
+      </div>
+
+      <div class="card">
+        <h2>Rebaixados</h2>
+        <p id="totalRebaixados">0</p>
+      </div>
+
+      <div class="card">
+        <h2>Movimentações do Dia</h2>
+        <p id="movimentoDia">0</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h2>Gráfico — Produtos por Loja</h2>
+      <canvas id="chartProdutos"></canvas>
+    </div>
+  </div>
+
+  <script>
+    // Valores de exemplo — depois integramos com seu banco
+    document.getElementById("totalLojas").textContent = 5;
+    document.getElementById("totalProdutos").textContent = 1280;
+    document.getElementById("totalRebaixados").textContent = 42;
+    document.getElementById("movimentoDia").textContent = 37;
+
+    const ctx = document.getElementById('chartProdutos');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Loja 1', 'Loja 2', 'Loja 3', 'Loja 4', 'Loja 5'],
+        datasets: [{
+          label: 'Produtos',
+          data: [320, 250, 190, 280, 240],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
